@@ -1,0 +1,71 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net7.0": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Pownu\\.nuget\\packages\\": {},
+    "C:\\Users\\Pownu\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Pownu\\RiderProjects\\Algorithms\\Eratosthenes\\Eratosthenes.csproj",
+      "projectName": "Eratosthenes",
+      "projectPath": "C:\\Users\\Pownu\\RiderProjects\\Algorithms\\Eratosthenes\\Eratosthenes.csproj",
+      "packagesPath": "C:\\Users\\Pownu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Pownu\\RiderProjects\\Algorithms\\Eratosthenes\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Users\\Pownu\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Pownu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Pownu\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Users\\Pownu\\.dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

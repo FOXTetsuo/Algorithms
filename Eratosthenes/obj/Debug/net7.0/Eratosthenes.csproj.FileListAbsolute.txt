@@ -1,0 +1,15 @@
+C:\Users\Pownu\RiderProjects\Algorithms\Eratosthenes\bin\Debug\net7.0\Eratosthenes.exe
+C:\Users\Pownu\RiderProjects\Algorithms\Eratosthenes\bin\Debug\net7.0\Eratosthenes.deps.json
+C:\Users\Pownu\RiderProjects\Algorithms\Eratosthenes\bin\Debug\net7.0\Eratosthenes.runtimeconfig.json
+C:\Users\Pownu\RiderProjects\Algorithms\Eratosthenes\bin\Debug\net7.0\Eratosthenes.dll
+C:\Users\Pownu\RiderProjects\Algorithms\Eratosthenes\bin\Debug\net7.0\Eratosthenes.pdb
+C:\Users\Pownu\RiderProjects\Algorithms\Eratosthenes\obj\Debug\net7.0\Eratosthenes.csproj.AssemblyReference.cache
+C:\Users\Pownu\RiderProjects\Algorithms\Eratosthenes\obj\Debug\net7.0\Eratosthenes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pownu\RiderProjects\Algorithms\Eratosthenes\obj\Debug\net7.0\Eratosthenes.AssemblyInfoInputs.cache
+C:\Users\Pownu\RiderProjects\Algorithms\Eratosthenes\obj\Debug\net7.0\Eratosthenes.AssemblyInfo.cs
+C:\Users\Pownu\RiderProjects\Algorithms\Eratosthenes\obj\Debug\net7.0\Eratosthenes.csproj.CoreCompileInputs.cache
+C:\Users\Pownu\RiderProjects\Algorithms\Eratosthenes\obj\Debug\net7.0\Eratosthenes.dll
+C:\Users\Pownu\RiderProjects\Algorithms\Eratosthenes\obj\Debug\net7.0\refint\Eratosthenes.dll
+C:\Users\Pownu\RiderProjects\Algorithms\Eratosthenes\obj\Debug\net7.0\Eratosthenes.pdb
+C:\Users\Pownu\RiderProjects\Algorithms\Eratosthenes\obj\Debug\net7.0\Eratosthenes.genruntimeconfig.cache
+C:\Users\Pownu\RiderProjects\Algorithms\Eratosthenes\obj\Debug\net7.0\ref\Eratosthenes.dll
