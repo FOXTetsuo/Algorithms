@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Huiswerk4", "Huiswerk4\Huiswerk4.csproj", "{77B28A0F-F7FC-43D6-98BC-B665815E6DC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{067F8EEA-5925-4B58-9189-83EB236EEA6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77B28A0F-F7FC-43D6-98BC-B665815E6DC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77B28A0F-F7FC-43D6-98BC-B665815E6DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77B28A0F-F7FC-43D6-98BC-B665815E6DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77B28A0F-F7FC-43D6-98BC-B665815E6DC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{067F8EEA-5925-4B58-9189-83EB236EEA6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067F8EEA-5925-4B58-9189-83EB236EEA6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067F8EEA-5925-4B58-9189-83EB236EEA6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067F8EEA-5925-4B58-9189-83EB236EEA6C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {743D973C-9240-44F2-9383-22E0B46148DE}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>AD</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\..\datastructures\MyArrayList\IMyArrayList.cs" Link="MyArrayList\IMyArrayList.cs" />
+    <Compile Include="..\..\..\datastructures\MyArrayList\MyArrayList.cs" Link="MyArrayList\MyArrayList.cs" />
+    <Compile Include="..\..\..\datastructures\MyArrayList\MyArrayListBuilder.cs" Link="MyArrayList\MyArrayListBuilder.cs" />
+    <Compile Include="..\..\..\datastructures\MyLinkedList\IMyLinkedList.cs" Link="MyLinkedList\IMyLinkedList.cs" />
+    <Compile Include="..\..\..\datastructures\MyLinkedList\MyLinkedList.cs" Link="MyLinkedList\MyLinkedList.cs" />
+    <Compile Include="..\..\..\datastructures\MyLinkedList\MyLinkedListBuilder.cs" Link="MyLinkedList\MyLinkedListBuilder.cs" />
+    <Compile Include="..\..\..\datastructures\MyLinkedList\MyLinkedListNode.cs" Link="MyLinkedList\MyLinkedListNode.cs" />
+    <Compile Include="..\..\..\datastructures\MyQueue\IMyQueue.cs" Link="MyQueue\IMyQueue.cs" />
+    <Compile Include="..\..\..\datastructures\MyQueue\MyQueue.cs" Link="MyQueue\MyQueue.cs" />
+    <Compile Include="..\..\..\datastructures\MyQueue\MyQueueBuilder.cs" Link="MyQueue\MyQueueBuilder.cs" />
+    <Compile Include="..\..\..\datastructures\MyStack\IMyStack.cs" Link="MyStack\IMyStack.cs" />
+    <Compile Include="..\..\..\datastructures\MyStack\MyStack.cs" Link="MyStack\MyStack.cs" />
+    <Compile Include="..\..\..\datastructures\MyStack\MyStackBuilder.cs" Link="MyStack\MyStackBuilder.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MyArrayList\" />
+    <Folder Include="MyLinkedList\" />
+    <Folder Include="MyStack\" />
+    <Folder Include="MyQueue\" />
+  </ItemGroup>
+
+</Project>

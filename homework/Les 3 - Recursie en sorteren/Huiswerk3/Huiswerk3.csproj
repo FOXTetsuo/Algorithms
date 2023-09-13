@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>AD</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\..\algorithms\sorters\InsertionSort.cs" Link="sorters\InsertionSort.cs" />
+    <Compile Include="..\..\..\algorithms\sorters\MergeSort.cs" Link="sorters\MergeSort.cs" />
+    <Compile Include="..\..\..\algorithms\sorters\QuickSort.cs" Link="sorters\QuickSort.cs" />
+    <Compile Include="..\..\..\algorithms\sorters\ShellSort.cs" Link="sorters\ShellSort.cs" />
+    <Compile Include="..\..\..\algorithms\sorters\Sorter.cs" Link="sorters\Sorter.cs" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>AD</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\..\datastructures\BinaryTree\BinaryNode.cs" Link="BinaryTree\BinaryNode.cs" />
+    <Compile Include="..\..\..\datastructures\BinaryTree\BinaryTree.cs" Link="BinaryTree\BinaryTree.cs" />
+    <Compile Include="..\..\..\datastructures\BinaryTree\IBinaryNode.cs" Link="BinaryTree\IBinaryNode.cs" />
+    <Compile Include="..\..\..\datastructures\BinaryTree\IBinaryTree.cs" Link="BinaryTree\IBinaryTree.cs" />
+    <Compile Include="..\..\..\datastructures\FirstChildNextSibling\FirstChildNextSiblingNode.cs" Link="FirstChildNextSibling\FirstChildNextSiblingNode.cs" />
+    <Compile Include="..\..\..\datastructures\FirstChildNextSibling\FirstChildNextSibling.cs" Link="FirstChildNextSibling\FirstChildNextSibling.cs" />
+    <Compile Include="..\..\..\datastructures\FirstChildNextSibling\IFirstChildNextSiblingNode.cs" Link="FirstChildNextSibling\IFirstChildNextSiblingNode.cs" />
+    <Compile Include="..\..\..\datastructures\FirstChildNextSibling\IFirstChildNextSibling.cs" Link="FirstChildNextSibling\IFirstChildNextSibling.cs" />
+    <Compile Include="..\..\..\algorithms\sorters\InsertionSort.cs" Link="sorters\InsertionSort.cs" />
+    <Compile Include="..\..\..\algorithms\sorters\MergeSort.cs" Link="sorters\MergeSort.cs" />
+    <Compile Include="..\..\..\algorithms\sorters\QuickSort.cs" Link="sorters\QuickSort.cs" />
+    <Compile Include="..\..\..\algorithms\sorters\ShellSort.cs" Link="sorters\ShellSort.cs" />
+    <Compile Include="..\..\..\algorithms\sorters\Sorter.cs" Link="sorters\Sorter.cs" />
+  </ItemGroup>
+
+</Project>

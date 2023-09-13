@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <RootNamespace>AD</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\..\datastructures\MyArrayList\MyArrayListTests.cs" Link="MyArrayListTests.cs" />
+    <Compile Include="..\..\..\datastructures\MyLinkedList\MyLinkedListTests.cs" Link="MyLinkedListTests.cs" />
+    <Compile Include="..\..\..\datastructures\MyQueue\MyQueueTests.cs" Link="MyQueueTests.cs" />
+    <Compile Include="..\..\..\datastructures\MyStack\MyStackTests.cs" Link="MyStackTests.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Huiswerk2\Huiswerk2.csproj" />
+  </ItemGroup>
+
+</Project>
