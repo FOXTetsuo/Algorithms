@@ -1,0 +1,9 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=246f0af3_002Dd656_002D4372_002Daf07_002D9a9af8991ba9/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from ..?..?..?datastructures?MyArrayList?MyArrayListTests.cs" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;ProjectFile&gt;3C33279F-DAC2-4FEF-B2F4-895CEA214F90/f:MyArrayListTests.cs/l:..?..?..?datastructures?MyArrayList?MyArrayListTests.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;3C33279F-DAC2-4FEF-B2F4-895CEA214F90/f:MyLinkedListTests.cs/l:..?..?..?datastructures?MyLinkedList?MyLinkedListTests.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;3C33279F-DAC2-4FEF-B2F4-895CEA214F90/f:MyStackTests.cs/l:..?..?..?datastructures?MyStack?MyStackTests.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;3C33279F-DAC2-4FEF-B2F4-895CEA214F90/f:MyQueueTests.cs/l:..?..?..?datastructures?MyQueue?MyQueueTests.cs&lt;/ProjectFile&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

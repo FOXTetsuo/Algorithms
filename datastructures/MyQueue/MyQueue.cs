@@ -1,32 +1,40 @@
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace AD
 {
     public partial class MyQueue<T> : IMyQueue<T>
     {
+        public MyLinkedList<T> list = new MyLinkedList<T>();
         public bool IsEmpty()
         {
-            throw new System.NotImplementedException();
+            return (list.Size() == 0);
         }
 
         public void Enqueue(T data)
         {
-            throw new System.NotImplementedException();
+            list.AddLast(data);
         }
 
         public T GetFront()
         {
-            throw new System.NotImplementedException();
+            if (IsEmpty())
+            {
+                throw new MyQueueEmptyException();
+            }
+            return list.GetFirst();
         }
 
         public T Dequeue()
         {
-            throw new System.NotImplementedException();
+            var data = GetFront();
+            list.RemoveFirst();
+            return data;
         }
 
         public void Clear()
         {
-            throw new System.NotImplementedException();
+            list = new MyLinkedList<T>();
         }
 
     }

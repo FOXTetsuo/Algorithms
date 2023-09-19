@@ -1,0 +1,15 @@
+C:\Users\Pownu\source\repos\c#\Algorithms\homework\Les 2 - Basis datastructuren\Huiswerk2\bin\Debug\net6.0\Huiswerk2.exe
+C:\Users\Pownu\source\repos\c#\Algorithms\homework\Les 2 - Basis datastructuren\Huiswerk2\bin\Debug\net6.0\Huiswerk2.deps.json
+C:\Users\Pownu\source\repos\c#\Algorithms\homework\Les 2 - Basis datastructuren\Huiswerk2\bin\Debug\net6.0\Huiswerk2.runtimeconfig.json
+C:\Users\Pownu\source\repos\c#\Algorithms\homework\Les 2 - Basis datastructuren\Huiswerk2\bin\Debug\net6.0\Huiswerk2.dll
+C:\Users\Pownu\source\repos\c#\Algorithms\homework\Les 2 - Basis datastructuren\Huiswerk2\bin\Debug\net6.0\Huiswerk2.pdb
+C:\Users\Pownu\source\repos\c#\Algorithms\homework\Les 2 - Basis datastructuren\Huiswerk2\obj\Debug\net6.0\Huiswerk2.csproj.AssemblyReference.cache
+C:\Users\Pownu\source\repos\c#\Algorithms\homework\Les 2 - Basis datastructuren\Huiswerk2\obj\Debug\net6.0\Huiswerk2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pownu\source\repos\c#\Algorithms\homework\Les 2 - Basis datastructuren\Huiswerk2\obj\Debug\net6.0\Huiswerk2.AssemblyInfoInputs.cache
+C:\Users\Pownu\source\repos\c#\Algorithms\homework\Les 2 - Basis datastructuren\Huiswerk2\obj\Debug\net6.0\Huiswerk2.AssemblyInfo.cs
+C:\Users\Pownu\source\repos\c#\Algorithms\homework\Les 2 - Basis datastructuren\Huiswerk2\obj\Debug\net6.0\Huiswerk2.csproj.CoreCompileInputs.cache
+C:\Users\Pownu\source\repos\c#\Algorithms\homework\Les 2 - Basis datastructuren\Huiswerk2\obj\Debug\net6.0\Huiswerk2.dll
+C:\Users\Pownu\source\repos\c#\Algorithms\homework\Les 2 - Basis datastructuren\Huiswerk2\obj\Debug\net6.0\refint\Huiswerk2.dll
+C:\Users\Pownu\source\repos\c#\Algorithms\homework\Les 2 - Basis datastructuren\Huiswerk2\obj\Debug\net6.0\Huiswerk2.pdb
+C:\Users\Pownu\source\repos\c#\Algorithms\homework\Les 2 - Basis datastructuren\Huiswerk2\obj\Debug\net6.0\Huiswerk2.genruntimeconfig.cache
+C:\Users\Pownu\source\repos\c#\Algorithms\homework\Les 2 - Basis datastructuren\Huiswerk2\obj\Debug\net6.0\ref\Huiswerk2.dll
