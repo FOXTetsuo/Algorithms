@@ -4,9 +4,19 @@ namespace AD
 {
     public class Opgave3
     {
+        public static int result;
         public static int OmEnOm(int n)
         {
-            throw new System.NotImplementedException();
+            if (n < 0)
+            throw new OmEnOmNegativeValueException();
+
+            if (n == 0)
+                return 0;
+
+            if (n == 1)
+                return 1;
+
+            return n + OmEnOm(n - 2);
         }
         public static void Run()
         {

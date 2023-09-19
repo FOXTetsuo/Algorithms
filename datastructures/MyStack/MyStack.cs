@@ -28,11 +28,5 @@ namespace AD
             }
             return list.GetFirst();
         }
-
-        public bool CheckBrackets(string s)
-        {
-          // todo
-          return true;
-        }
     }
 }
