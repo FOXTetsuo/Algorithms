@@ -24,8 +24,8 @@ namespace AD
             if (node == null)
                 return 0;
 
-            int leftSize = CountNodes(node.GetFirstChild());
-            int rightSize = CountNodes(node.GetNextSibling());
+            int leftSize = Size(node.GetFirstChild());
+            int rightSize = Size(node.GetNextSibling());
 
             // Add 1 for the current node
             return 1 + leftSize + rightSize;
