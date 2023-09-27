@@ -16,10 +16,10 @@ namespace AD
         public int Size()
         {
             // Call a recursive helper function starting from the root
-            return CountNodes(GetRoot());
+            return Size(GetRoot());
         }
 
-        private int CountNodes(IFirstChildNextSiblingNode<T> node)
+        private int Size(IFirstChildNextSiblingNode<T> node)
         {
             if (node == null)
                 return 0;
