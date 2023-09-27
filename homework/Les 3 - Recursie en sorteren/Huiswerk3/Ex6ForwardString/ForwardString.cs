@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace AD
 {
@@ -6,12 +7,27 @@ namespace AD
     {
         public static string ForwardString(List<int> list, int from_index)
         {
-            throw new System.NotImplementedException();
+            // Begin with the base case
+            if (from_index >= list.Count)
+            {
+                return "";
+            }
+
+            return list[from_index].ToString() + " " + ForwardString(list, from_index + 1);
         }
         
         public static string BackwardString(List<int> list, int from_index)
         {
-            throw new System.NotImplementedException();
+            // Take the forwardstring and flip it :DDD
+            
+            // Begin with the base case
+            if (from_index >= list.Count)
+            {
+                return "";
+            }
+
+            return BackwardString(list, from_index + 1) + " " + list[from_index].ToString();
+
         }
 
         public static void Run()

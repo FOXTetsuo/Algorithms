@@ -50,7 +50,7 @@
 
         public static void Run()
         {
-            int MAX = 35;
+            int MAX = 48;
 
             System.Console.WriteLine("Recursief:");
             for (int n = 1; n <= MAX; n++)

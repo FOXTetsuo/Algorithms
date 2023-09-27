@@ -8,23 +8,36 @@ namespace AD
     {
         public override void Sort(List<int> list)
         {
-            // Split the list in two until we have a list with two or fewer elements
-            if (list.Count > 2)
-            {
-                Sort(list.GetRange(0, list.Count / 2));
-                Sort(list.GetRange(list.Count / 2, list.Count()));
-            }
+            Sort(list, 0, list.Count);
+        }
 
-            if (list.Count != 1)
+        public void Sort(List<int> list, int left, int right)
+        {
+            
+            if (left < right - 1)
             {
-                var i0 = list[0];
-                var i1 = list[1];
-                if (i0 > i1)
-                {
-                    list[0] = i1;
-                    list[1] = i0;
-                }
+                int center = (left + right) / 2;
+                Sort(list, left, center);
+                Sort(list, center, right);
+                Merge(list, left, center, right);
             }
+        }
+
+        public void Merge(List<int> list, int left, int center, int right)
+        {
+            var Left = center - left + 1;
+            var Right = right - center;
+
+            var leftList = list.GetRange(left, center);
+            var rightList = list.GetRange(center + 1, right);
+
+            // dit is lelijk >:(
+            leftList[Left + 1] = int.MaxValue;
+            rightList[Right + 1] = int.MaxValue;
+            var i = 1;
+            var j = 1;
+
+            
         }
 
     }
