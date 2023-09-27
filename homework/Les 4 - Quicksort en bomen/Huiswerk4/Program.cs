@@ -127,54 +127,54 @@
             System.Console.WriteLine("Size     : {0}", tree.Size());
             System.Console.WriteLine("ToString : {0}", tree);
         }
-        //
-        // static void Opgave3()
-        // {
-        //     System.Console.WriteLine("\n=====   Opgave 3 : BinaryTree   =====\n");
-        //
-        //     // Empty tree
-        //     System.Console.WriteLine("--- Empty tree ---");
-        //     BinaryTree<int> emptyTree = new BinaryTree<int>();
-        //     PrintBinaryTreeInfo(emptyTree);
-        //
-        //     // Int tree
-        //     System.Console.WriteLine("\n--- Int tree ---");
-        //     BinaryTree<int> intTree = CreateBinaryTree_Int();
-        //     PrintBinaryTreeInfo(intTree);
-        //
-        //     // String tree
-        //     System.Console.WriteLine("\n--- String tree ---");
-        //     BinaryTree<string> stringTree = CreateBinaryTree_String();
-        //     PrintBinaryTreeInfo(stringTree);
-        // }
+        
+        static void Opgave3()
+        {
+            System.Console.WriteLine("\n=====   Opgave 3 : BinaryTree   =====\n");
+        
+            // Empty tree
+            System.Console.WriteLine("--- Empty tree ---");
+            BinaryTree<int> emptyTree = new BinaryTree<int>();
+            PrintBinaryTreeInfo(emptyTree);
+        
+            // Int tree
+            System.Console.WriteLine("\n--- Int tree ---");
+            BinaryTree<int> intTree = CreateBinaryTree_Int();
+            PrintBinaryTreeInfo(intTree);
+        
+            // String tree
+            System.Console.WriteLine("\n--- String tree ---");
+            BinaryTree<string> stringTree = CreateBinaryTree_String();
+            PrintBinaryTreeInfo(stringTree);
+        }
 
-        // static void Opgave4()
-        // {
-        //     System.Console.WriteLine("\n=====   Opgave 4 : NumberOfNodes   =====\n");
-        //
-        //     // Empty tree
-        //     System.Console.WriteLine("--- Empty tree ---");
-        //     BinaryTree<int> emptyTree = new BinaryTree<int>();
-        //     PrintBinaryTreeMoreInfo(emptyTree);
-        //
-        //     // Int tree
-        //     System.Console.WriteLine("\n--- Int tree ---");
-        //     BinaryTree<int> intTree = CreateBinaryTree_Int();
-        //     PrintBinaryTreeMoreInfo(intTree);
-        //
-        //     // String tree
-        //     System.Console.WriteLine("\n--- String tree ---");
-        //     BinaryTree<string> stringTree = CreateBinaryTree_String();
-        //     PrintBinaryTreeMoreInfo(stringTree);
-        //
-        // }
+        static void Opgave4()
+        {
+            System.Console.WriteLine("\n=====   Opgave 4 : NumberOfNodes   =====\n");
+        
+            // Empty tree
+            System.Console.WriteLine("--- Empty tree ---");
+            BinaryTree<int> emptyTree = new BinaryTree<int>();
+            PrintBinaryTreeMoreInfo(emptyTree);
+        
+            // Int tree
+            System.Console.WriteLine("\n--- Int tree ---");
+            BinaryTree<int> intTree = CreateBinaryTree_Int();
+            PrintBinaryTreeMoreInfo(intTree);
+        
+            // String tree
+            System.Console.WriteLine("\n--- String tree ---");
+            BinaryTree<string> stringTree = CreateBinaryTree_String();
+            PrintBinaryTreeMoreInfo(stringTree);
+        
+        }
 
         static void Main(string[] args)
         {
             // Opgave1();
-            Opgave2();
-            // Opgave3();
-            // Opgave4();
+            // Opgave2();
+            Opgave3();
+            Opgave4();
         }
     }
 }
