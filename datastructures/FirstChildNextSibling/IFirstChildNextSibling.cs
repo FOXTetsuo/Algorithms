@@ -4,6 +4,6 @@ namespace AD
     {
         IFirstChildNextSiblingNode<T> GetRoot();
         int Size();
-        void PrintPreOrder();
+        void PrintPreOrder(IFirstChildNextSiblingNode<T> node, int depth);
     }
 }
