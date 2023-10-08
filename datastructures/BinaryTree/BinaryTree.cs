@@ -109,11 +109,18 @@ namespace AD
             return "";
         }
 
+        public string ToInfixString(BinaryNode<T> node)
+        {
+            if (node == null)
+                return ("NIL");
+            return "[ " + ToInfixString(node.GetRight()) + " " + node.GetData() + " " + ToInfixString(node.GetLeft() )+ " ]";
+        }
+        
         public string ToInfixString()
         {
             if (IsEmpty())
-                return ("NIL");
-            return "";
+                return "";
+            return ToInfixString(GetRoot());
         }
 
         public string ToPostfixString()
