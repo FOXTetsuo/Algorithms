@@ -86,27 +86,27 @@
             System.Console.WriteLine("NumberOfNodesWithTwoChildren : {0}", tree.NumberOfNodesWithTwoChildren());
         }
 
-        // static void Opgave1()
-        // {
-        //     System.Console.WriteLine("\n=====   Opgave 1 : QuickSort   =====\n");
-        //     Sorter isort = new InsertionSort();
-        //     Sorter msort = new MergeSort();
-        //     Sorter ssort = new ShellSort();
-        //     Sorter qsort = new QuickSort();
-        //     isort.Run();
-        //     msort.Run();
-        //     ssort.Run();
-        //     qsort.Run();
-        //     int[] numbers = { 100, 1000, 10000 };
-        //     foreach (int num in numbers)
-        //     {
-        //         isort.RunWithTimer(num);
-        //         msort.RunWithTimer(num);
-        //         ssort.RunWithTimer(num);
-        //         qsort.RunWithTimer(num);
-        //     }
-        // }
-        //
+        static void Opgave1()
+        {
+            System.Console.WriteLine("\n=====   Opgave 1 : QuickSort   =====\n");
+            Sorter isort = new InsertionSort();
+            Sorter msort = new MergeSort();
+            Sorter ssort = new ShellSort();
+            Sorter qsort = new QuickSort();
+            isort.Run();
+            msort.Run();
+            ssort.Run();
+            qsort.Run();
+            int[] numbers = { 100, 1000, 10000 };
+            foreach (int num in numbers)
+            {
+                isort.RunWithTimer(num);
+                msort.RunWithTimer(num);
+                ssort.RunWithTimer(num);
+                qsort.RunWithTimer(num);
+            }
+        }
+        
         static void Opgave2()
         {
             System.Console.WriteLine("\n=====   Opgave 2 : FirstChildNextSibling   =====\n");
@@ -171,8 +171,8 @@
 
         static void Main(string[] args)
         {
-            // Opgave1();
-            // Opgave2();
+            Opgave1();
+            Opgave2();
             Opgave3();
             Opgave4();
         }
