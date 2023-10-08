@@ -53,5 +53,31 @@ namespace AD
             PrintPreOrder(GetRoot(), 0);
         }
 
+        public override string ToString()
+        {
+            if (GetRoot() == null)
+            {
+                return "NIL";
+            }
+            return ToString(GetRoot());
+        }
+
+        public string ToString(IFirstChildNextSiblingNode<T> node)
+        {
+            if (node == null)
+                return "";
+            
+            if (node.GetFirstChild() == null && node.GetNextSibling() == null)
+                return node.GetData().ToString();
+            
+            if (node.GetFirstChild() == null)
+                return node.GetData() + ",NS(" + ToString(node.GetNextSibling()) + ")";
+            
+            if (node.GetNextSibling() == null)
+                return node.GetData() + ",FC(" + ToString(node.GetFirstChild()) + ")";
+            
+            return node.GetData() + ",FC(" + ToString(node.GetFirstChild()) + ")" + ",NS(" + ToString(node.GetNextSibling()) + ")";
+        }
+
     }
 }
