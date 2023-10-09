@@ -113,13 +113,13 @@ namespace AD
         {
             if (node == null)
                 return ("NIL");
-            return "[ " + ToInfixString(node.GetRight()) + " " + node.GetData() + " " + ToInfixString(node.GetLeft() )+ " ]";
+            return "[ " + ToInfixString(node.GetLeft()) + " " + node.GetData() + " " + ToInfixString(node.GetRight() )+ " ]";
         }
         
         public string ToInfixString()
         {
             if (IsEmpty())
-                return "";
+                return "NIL";
             return ToInfixString(GetRoot());
         }
 

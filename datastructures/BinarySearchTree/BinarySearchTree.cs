@@ -15,19 +15,22 @@ namespace AD
         {
             if (x.CompareTo(node.GetData()) < 0)
             {
-                // If node.right is null, that means we have found where we need to be inserted. There is no larger node.
-                if (node.GetRight() == null)
-                    node.right = new BinaryNode<T>(x, null, null);
-                else
-                // Otherwise, keep going!
-                    Insert(x, node.GetRight());
-            }
-            else if (x.CompareTo(node.GetData()) > 0)
-            {
+                // If node.left is null, that means we have found where we need to be inserted. There is no smaller node.
+                // Because X is smaller than the current node, we insert on the left.
                 if (node.GetLeft() == null)
                     node.left = new BinaryNode<T>(x, null, null);
                 else
+                // Otherwise, keep going!
                     Insert(x, node.GetLeft());
+            }
+            else if (x.CompareTo(node.GetData()) > 0)
+            {
+                // If node.right is null, that means we have found where we need to be inserted. There is no larger node.
+                // Because X is larger than the current node, we insert on the right.
+                if (node.GetRight() == null)
+                    node.right = new BinaryNode<T>(x, null, null);
+                else
+                    Insert(x, node.GetRight());
             }
         }
     
@@ -55,6 +58,9 @@ namespace AD
 
         public T FindMin()
         {
+            if (IsEmpty())
+                throw new BinarySearchTreeEmptyException();
+            
             root = GetRoot();
             return FindMin(root);
         }
@@ -78,7 +84,15 @@ namespace AD
         
         public void RemoveMin()
         {
-            throw new System.NotImplementedException();
+            if (IsEmpty())
+                throw new BinarySearchTreeEmptyException();
+            if (GetRoot().GetLeft() == null && GetRoot().GetRight() == null)
+            {
+                root = null;
+                return;
+            }
+                
+            RemoveMin(GetRoot());
         }
 
         // Method to remove min item from a (sub)tree. Returns the new root.
@@ -91,59 +105,98 @@ namespace AD
                 node.left = RemoveMin(node.left);
                 return node;
             }
-            return node.right;
+            return null;
         }
 
-        public void Remove(T x, BinaryNode<T> node)
+        // public void Remove(T x, BinaryNode<T> node)
+        // {
+        //     // X is smaller
+        //     if (x.CompareTo(nodeData) < 0)
+        //     {
+        //         Remove(x, nodeLeft);
+        //     }
+        //     // X is larger
+        //     else if (x.CompareTo(nodeData) > 0)
+        //     {
+        //         Remove(x, nodeRight);
+        //     }
+        //     // X is equal (node to remove)
+        //     else if (x.CompareTo(node.GetData()) == 0)
+        //     {
+        //         // Easy peasy, the node has no kids.
+        //         if (nodeLeft == null && nodeRight == null)
+        //         {
+        //             node = null;
+        //         }
+        //         // Only one child, just move it up one
+        //         else if (nodeLeft == null && nodeRight != null)
+        //         {
+        //             node = nodeRight;
+        //         }
+        //         else if (nodeLeft != null && nodeRight == null)
+        //         {
+        //             node = nodeLeft;
+        //         }
+        //         // Now time for the hard part. The node has two children.
+        //         else
+        //         {
+        //             node.data = FindMin(nodeRight);
+        //             node.right = RemoveMin(nodeRight);
+        //         }
+        //     }
+        // }
+        
+        public BinaryNode<T> Remove(T x, BinaryNode<T> node)
         {
-            var nodeData = node.GetData();
-            var nodeLeft = node.GetLeft();
-            var nodeRight = node.GetRight();
-            // X is smaller
-            if (x.CompareTo(nodeData) > 0)
+            if (node == null)
             {
-                Remove(x, nodeLeft);
+                throw new BinarySearchTreeElementNotFoundException();
+            }
+
+            var nodeData = node.GetData();
+
+            // X is smaller
+            if (x.CompareTo(nodeData) < 0)
+            {
+                node.left = Remove(x, node.left);
             }
             // X is larger
-            else if (x.CompareTo(nodeData) < 0)
+            else if (x.CompareTo(nodeData) > 0)
             {
-                Remove(x, nodeRight);
+                node.right = Remove(x, node.right);
             }
             // X is equal (node to remove)
-            else if (x.CompareTo(node.GetData()) == 0)
+            else
             {
-                // Easy peasy, the node has no kids.
-                if (nodeLeft == null && nodeRight == null)
+                // Easy peasy, the node has no kids or just 1.
+                // If the left is null. that means we can just return right. if right is also null, well, that's still correct!
+                if (node.left == null)
                 {
-                    node = null;
+                    return node.right;
                 }
-                // Only one child, just move it up one
-                else if (nodeLeft == null && nodeRight != null)
+                if (node.right == null)
                 {
-                    node = nodeRight;
+                    return node.left;
                 }
-                else if (nodeLeft != null && nodeRight == null)
-                {
-                    node = nodeLeft;
-                }
-                // Now time for the hard part. The node has two children.
-                else
-                {
-                    node.data = FindMin(nodeRight);
-                    node.right = RemoveMin(nodeRight);
-                }
+
+                // Node with two children, get the smallest in the right subtree
+                node.data = FindMin(node.right);
+
+                // Delete the inorder successor
+                node.right = Remove(node.data, node.right);
             }
+            return node;
         }
-    
+        
         public void Remove(T x)
         {
             root = GetRoot();
             if (root == null)
             {
-                return;
+                throw new BinarySearchTreeElementNotFoundException();
             }
 
-            if (x.CompareTo(root.GetData()) == 0)
+            if (x.CompareTo(root.GetData()) == 0 && root.GetLeft() == null && root.GetRight() == null)
             {
                 root = null;
                 return;
@@ -161,14 +214,14 @@ namespace AD
         {
             if (node == null) return "";
             // Recursively print the binary search tree
-            return ToString(node.GetRight()) + " " + node.GetData() + " " + ToString(node.GetLeft());
+            return ToString(node.GetLeft()) + node.GetData() + " " + ToString(node.GetRight());
         }
 
         public override string ToString()
         {
             if (GetRoot() == null)
-                return "NIL";
-            return ToString(GetRoot());
+                return "";
+            return ToString(GetRoot()).TrimStart().TrimEnd();
         }
     }
 }
