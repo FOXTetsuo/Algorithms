@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 
 namespace AD
@@ -15,7 +16,8 @@ namespace AD
         //----------------------------------------------------------------------
         public PriorityQueue()
         {
-            throw new System.NotImplementedException();
+            array = new T[DEFAULT_CAPACITY];
+            size = 0;
         }
 
         //----------------------------------------------------------------------
@@ -23,23 +25,106 @@ namespace AD
         //----------------------------------------------------------------------
         public int Size()
         {
-            throw new System.NotImplementedException();
+            return size;
         }
 
         public void Clear()
         {
-            throw new System.NotImplementedException();
+            array = new T[DEFAULT_CAPACITY];
+            size = 0;
         }
 
         public void Add(T x)
         {
-            throw new System.NotImplementedException();
+            if (Size() + 1 >= array.Length)
+            {
+                // Resize the array if it's full
+                int newSize = array.Length * 2;
+                T[] newArray = new T[newSize];
+                Array.Copy(array, newArray, array.Length);
+                array = newArray;
+            }
+
+            array[Size() + 1] = x;
+            size += 1;
+            PercolateUp();
         }
 
         // Removes the smallest item in the priority queue
         public T Remove()
         {
-            throw new System.NotImplementedException();
+            if (array[1] == null || EqualityComparer<T>.Default.Equals(array[1], default(T)))
+                throw new PriorityQueueEmptyException();
+            
+            var copyOfFirstIndex = array[1];
+            array[1] = array[Size()];
+            PercolateDown();
+            array[Size()] = default(T);
+            size += -1;
+
+            return copyOfFirstIndex;
+        }
+        
+        public void PercolateDown()
+        {
+            PercolateDown(1);
+        }
+
+        public void PercolateDown(int arrayIndex)
+        {
+            var leftChildIndex = arrayIndex * 2;
+            var rightChildIndex = arrayIndex * 2 + 1;
+            
+            // MAX CHECK NEEDED
+            var leftChild = array[leftChildIndex];
+            var rightChild = array[rightChildIndex];
+            
+            // If the left child is larger than the right, we compare the left with the index
+            if (leftChild.CompareTo(rightChild) < 0)
+            {
+                // If it is larger, swap the two
+                if (array[arrayIndex].CompareTo(leftChild) > 0)
+                {
+                    Swap(arrayIndex, leftChildIndex);
+                    PercolateDown(arrayIndex);
+                }
+            }
+            // otherwise, we compare the right with the index
+            // If it is larger, swap the two
+            if (array[arrayIndex].CompareTo(rightChild) > 0)
+            {
+                Swap(arrayIndex, rightChildIndex);
+                PercolateDown(arrayIndex);
+            }
+        }
+
+        public void PercolateUp()
+        {
+            PercolateUp(Size());
+        }
+        
+        public void PercolateUp(int arrayIndex)
+        {
+            var parentIndex = arrayIndex / 2;
+
+            // MAX CHECK NEEDED
+            var parent = array[parentIndex];
+            
+            // otherwise, we compare the right with the index
+            // If it is smaller, swap the two
+            if (array[arrayIndex].CompareTo(parent) < 0)
+            {
+                Swap(parentIndex, arrayIndex);
+                if (parentIndex > 1)
+                    PercolateUp(parentIndex);
+            }
+        }
+
+        public void Swap(int indexOfBiggerElement, int index)
+        {
+            T temp = array[index];
+            array[index] = array[indexOfBiggerElement];
+            array[indexOfBiggerElement] = temp;
         }
 
 
@@ -57,5 +142,17 @@ namespace AD
             throw new System.NotImplementedException();
         }
 
+        public override string ToString()
+        {
+            if (Size() == 0)
+                return "";
+            var returnstring = "";
+            for (int i = 1; i < Size() + 1; i++)
+            {
+                returnstring += array[i] + " ";
+            }
+
+            return returnstring.TrimEnd();
+        }
     }
 }
