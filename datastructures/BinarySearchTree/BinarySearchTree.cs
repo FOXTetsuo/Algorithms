@@ -100,14 +100,19 @@ namespace AD
         {
             if (node == null)
                 throw new BinarySearchTreeElementNotFoundException();
-            if (node.GetLeft() != null)
-            {
-                node.left = RemoveMin(node.left);
-                return node;
-            }
-            return null;
+
+            // If the left node is null, we have found the min. Thus, the new root is either the node on the right if it exists
+            // or null if there is no node on the right.
+            if (node.left == null)
+                return node.right;
+            
+            // Left node not found, so keep going.
+            node.left = RemoveMin(node.left);
+            
+            return node;
         }
 
+        // Oude verkeerde cod, wel heel benieuwd wat ik fout heb gedaan
         // public void Remove(T x, BinaryNode<T> node)
         // {
         //     // X is smaller
