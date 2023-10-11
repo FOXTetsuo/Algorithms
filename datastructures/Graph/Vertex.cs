@@ -24,9 +24,10 @@ namespace AD
         /// <param name="name">The name of the new vertex</param>
         public Vertex(string name)
         {
-            throw new System.NotImplementedException();
+            this.name = name;
+            adj = new LinkedList<Edge>();
+            distance = Graph.INFINITY;
         }
-
 
         //----------------------------------------------------------------------
         // Interface methods that have to be implemented for exam
@@ -34,31 +35,33 @@ namespace AD
 
         public string GetName()
         {
-            throw new System.NotImplementedException();
+            return name;
         }
         public LinkedList<Edge> GetAdjacents()
         {
-            throw new System.NotImplementedException();
+            return adj;
         }
 
         public double GetDistance()
         {
-            throw new System.NotImplementedException();
+            return distance;
         }
 
         public Vertex GetPrevious()
         {
-            throw new System.NotImplementedException();
+            return prev;
         }
 
         public bool GetKnown()
         {
-            throw new System.NotImplementedException();
+            return known;
         }
 
         public void Reset()
         {
-            throw new System.NotImplementedException();
+            distance = Graph.INFINITY;
+            prev = null;
+            known = false;
         }
 
 
@@ -75,7 +78,21 @@ namespace AD
         /// <returns>The string representation of this Graph instance</returns> 
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            var returnstring = name;
+
+            if (distance != Graph.INFINITY)
+            {
+                returnstring += "(" + distance + ") ";
+            }
+             returnstring += "[";
+
+            foreach (Edge e in adj.OrderBy(x => x.dest.name))
+            {
+                returnstring += ($"{e.dest.name} ({e.cost})");
+            }
+
+            returnstring += "]";
+            return returnstring;
         }
     }
 }

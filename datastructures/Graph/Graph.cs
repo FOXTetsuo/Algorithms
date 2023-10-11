@@ -115,7 +115,13 @@ namespace AD
         /// <returns>The string representation of this Graph instance</returns>
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            var returnstring = "";
+            foreach (string key in vertexMap.Keys.OrderBy(x => x))
+            {
+                returnstring+= vertexMap[key];
+            }
+
+            return returnstring;
         }
 
 
