@@ -74,27 +74,24 @@ namespace AD
         {
             var leftChildIndex = arrayIndex * 2;
             var rightChildIndex = arrayIndex * 2 + 1;
-            
-            // MAX CHECK NEEDED
-            var leftChild = array[leftChildIndex];
-            var rightChild = array[rightChildIndex];
-            
-            // If the left child is larger than the right, we compare the left with the index
-            if (leftChild.CompareTo(rightChild) < 0)
+
+            var smallest = 0;
+
+            if (leftChildIndex <= Size() && array[leftChildIndex].CompareTo(array[arrayIndex]) < 0)
             {
-                // If it is larger, swap the two
-                if (array[arrayIndex].CompareTo(leftChild) > 0)
-                {
-                    Swap(arrayIndex, leftChildIndex);
-                    PercolateDown(arrayIndex);
-                }
+                smallest = leftChildIndex;
             }
-            // otherwise, we compare the right with the index
-            // If it is larger, swap the two
-            if (array[arrayIndex].CompareTo(rightChild) > 0)
+            else
             {
-                Swap(arrayIndex, rightChildIndex);
-                PercolateDown(arrayIndex);
+                smallest = arrayIndex;
+            }
+            if (rightChildIndex <= (Size()) && array[rightChildIndex].CompareTo(array[smallest]) < 0)
+                smallest = rightChildIndex;
+            
+            if (smallest != arrayIndex)
+            {
+                Swap(arrayIndex, smallest);
+                PercolateDown(smallest);
             }
         }
 
