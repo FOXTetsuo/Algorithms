@@ -131,12 +131,25 @@ namespace AD
 
         public void AddFreely(T x)
         {
-            throw new System.NotImplementedException();
+            if (Size() + 1 >= array.Length)
+            {
+                // Resize the array if it's full
+                int newSize = array.Length * 2;
+                T[] newArray = new T[newSize];
+                Array.Copy(array, newArray, array.Length);
+                array = newArray;
+            }
+
+            array[Size() + 1] = x;
+            size += 1;
         }
 
         public void BuildHeap()
         {
-            throw new System.NotImplementedException();
+            for (int i = Size() / 2; i > 0; i--)
+            {
+                PercolateDown(i);
+            }
         }
 
         public override string ToString()
