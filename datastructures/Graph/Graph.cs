@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -17,7 +18,7 @@ namespace AD
 
         public Graph()
         {
-            throw new System.NotImplementedException();
+            vertexMap = new Dictionary<string, Vertex>();
         }
 
 
@@ -32,7 +33,7 @@ namespace AD
         /// <param name="name">The name of the new vertex</param>
         public void AddVertex(string name)
         {
-            throw new System.NotImplementedException();
+            vertexMap.TryAdd(name, new Vertex(name));
         }
 
 
@@ -44,7 +45,14 @@ namespace AD
         /// <returns>The vertex withe the given name</returns>
         public Vertex GetVertex(string name)
         {
-            throw new System.NotImplementedException();
+            if (vertexMap.ContainsKey(name))
+            {
+                return vertexMap[name];
+            }
+            // Maybe save to the map
+
+            AddVertex(name);
+            return GetVertex(name);
         }
 
 
@@ -58,7 +66,10 @@ namespace AD
         /// <param name="cost">cost of the edge</param>
         public void AddEdge(string source, string dest, double cost = 1)
         {
-            throw new System.NotImplementedException();
+            var sourceVert = GetVertex(source);
+            var destinationVert = GetVertex(dest);
+
+            sourceVert.GetAdjacents().AddLast(new Edge(destinationVert, cost));
         }
 
 
@@ -68,7 +79,10 @@ namespace AD
         /// </summary>
         public void ClearAll()
         {
-            throw new System.NotImplementedException();
+            foreach (var kvp in vertexMap)
+            {
+                kvp.Value.Reset();
+            }
         }
 
         /// <summary>

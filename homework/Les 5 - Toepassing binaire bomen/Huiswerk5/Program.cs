@@ -67,7 +67,7 @@
 
         static void Main(string[] args)
         {
-            // Opgave1();
+            Opgave1();
             Opgave2();
         }
     }
