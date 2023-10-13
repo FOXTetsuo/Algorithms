@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace AD
 {
-    public partial class Vertex : IVertex
+    public partial class Vertex : IVertex, IComparable<Vertex>
     {
         public string name;
         public LinkedList<Edge> adj;
@@ -69,6 +69,33 @@ namespace AD
         // ToString that has to be implemented for exam
         //----------------------------------------------------------------------
 
+        public int CompareTo(Vertex? other)
+        {
+            if (ReferenceEquals(this, other))
+            {
+                return 0; // Same instance, so they are equal
+            }
+
+            if (other is null)
+            {
+                return 1; // Other is null, so this is greater
+            }
+
+            // Compare vertices based on their distance property
+            if (distance < other.distance)
+            {
+                return -1; // This vertex has a smaller distance
+            }
+            else if (distance > other.distance)
+            {
+                return 1; // This vertex has a greater distance
+            }
+            else
+            {
+                return 0; // Distances are equal, consider them equal
+            };
+        }
+
         /// <summary>
         ///    Converts this instance of Vertex to its string representation.
         ///    <para>Output will be like : name (distance) [ adj1 (cost) adj2 (cost) .. ]</para>
@@ -80,19 +107,20 @@ namespace AD
         {
             var returnstring = name;
 
-            if (distance != Graph.INFINITY)
+            if (GetDistance() != Graph.INFINITY)
             {
-                returnstring += "(" + distance + ") ";
+                returnstring += $"({GetDistance()}) ";
             }
-             returnstring += "[";
+            returnstring += "[";
 
             foreach (Edge e in adj.OrderBy(x => x.dest.name))
             {
-                returnstring += ($"{e.dest.name} ({e.cost})");
+                returnstring += $"{e.dest.name} ({e.cost}) ";
             }
 
             returnstring += "]";
             return returnstring;
         }
+
     }
 }

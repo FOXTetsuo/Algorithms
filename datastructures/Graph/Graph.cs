@@ -91,7 +91,26 @@ namespace AD
         /// <param name="name">The name of the starting vertex</param>
         public void Unweighted(string name)
         {
-            throw new System.NotImplementedException();
+            var queue = new Queue<Vertex>();
+            Vertex startinVertex = vertexMap[name];
+            startinVertex.distance = 0;
+            
+            queue.Enqueue(startinVertex);
+
+            while (queue.Count != 0)
+            {
+                var vert = queue.Dequeue();
+
+                foreach (Edge e in vert.GetAdjacents())
+                {
+                    if (e.dest.distance == INFINITY)
+                    {
+                        e.dest.distance = vert.distance + 1;
+                        e.dest.prev = vert;
+                        queue.Enqueue(e.dest);
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -100,7 +119,38 @@ namespace AD
         /// <param name="name">The name of the starting vertex</param>
         public void Dijkstra(string name)
         {
-            throw new System.NotImplementedException();
+            // first get vertex
+            var vertex = GetVertex(name);
+            vertex.distance = 0;
+            var priorityQueue = new PriorityQueue<Vertex>();
+            priorityQueue.Add(vertex);
+
+            while (priorityQueue.Size() > 0)
+            {
+                vertex = priorityQueue.Remove();
+                if (vertex.GetKnown())
+                    continue;
+                
+                vertex.known = true;
+                
+                foreach (var edge in vertex.GetAdjacents())
+                {
+                    var w = edge.dest;
+                    if (!w.GetKnown())
+                    {
+                        var tentativeDistance = vertex.GetDistance() + edge.cost;
+                        if (tentativeDistance < w.GetDistance())
+                        {
+                            // Update the distance and previous vertex for 'w'.
+                            w.distance = tentativeDistance;
+                            w.prev = vertex;
+
+                            // Add 'w' to the priority queue to explore its neighbors.
+                            priorityQueue.Add(w);
+                        }
+                    }
+                }
+            }
         }
 
         //----------------------------------------------------------------------
