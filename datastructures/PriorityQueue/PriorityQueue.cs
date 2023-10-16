@@ -164,5 +164,42 @@ namespace AD
 
             return returnstring.TrimEnd();
         }
+
+        public bool isComplete()
+        {
+            for (int i = 1; i < Size(); i++)
+            {
+                if (array[i].CompareTo(default(T)) == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public bool isMaxHeap()
+        {
+            for (int i = 1; i <= Size(); i++)
+            {
+                if (2 * i <= Size())
+                {
+                    if (array[i].CompareTo(array[2*i]) < 0)
+                    {
+                        return false;
+                    }
+                }
+                
+                if (2 * i + 1 <= Size())
+                {
+                    if (array[i].CompareTo(array[2*i+1]) < 0 )
+                    {
+                        return false;
+                    }
+                }
+                
+            }
+            
+            return true;
+        }
     }
 }

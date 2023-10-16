@@ -65,6 +65,57 @@ namespace AD
             return FindMin(root);
         }
         
+        public BinaryNode<T> FindMinNode(BinaryNode<T> node)
+        {
+            if (node.left != null)
+            {
+                return FindMinNode(node.left);
+            }
+
+            return node;
+        }
+
+        public BinaryNode<T> FindMinNode()
+        {
+            if (IsEmpty())
+                throw new BinarySearchTreeEmptyException();
+            
+            root = GetRoot();
+            return FindMinNode(root);
+        }
+
+        public T FindSecondToMin()
+        {
+            var smallestElement = FindMinNode();
+            
+            // We need SOME kind of element here.
+            BinaryNode<T> smallestInSubtree = GetRoot();
+
+            // If the subtree is empty, just ignore it
+            if (smallestElement.GetRight() != null)
+            {
+                return FindMinNode(smallestElement.GetRight()).data;
+            }
+            
+            var node = GetRoot();
+            var nodeLeftData = node.GetLeft().GetData();
+            var nodeRightData = node.GetRight().GetData();
+            
+            // Parent als rechts null is
+            // Kleinste in rechter subboom als die dat niet is
+            while (nodeLeftData.CompareTo(smallestElement.data) != 0 && nodeRightData.CompareTo(smallestElement.data) != 0)
+                {
+                    if (node.GetLeft() != null)
+                        node = node.GetLeft();
+                    else node = node.GetRight();
+                    
+                    nodeLeftData = node.GetLeft().GetData();
+                    nodeRightData = node.GetRight().GetData();
+                }
+
+            return node.GetData();
+        }
+        
         // Just keep going right
         public T FindMax(BinaryNode<T> node)
         {
