@@ -115,45 +115,6 @@ namespace AD
 
         // WARNING: THIS IS INEFFICIENT AS SHIT. IT'S A DEPTH FIRST SEARCH.
         // Sets the distance of each Vertex to the distance they have from the Node you're trying to find
-        public void FindDistanceTo(string name)
-        {
-            foreach (var vertex in vertexMap)
-            {
-                if (vertex.Key == name)
-                {
-                    vertex.Value.distance = 0;
-                    continue;
-                }
-                vertex.Value.distance = Travel(vertex.Key, name, 0);
-
-                if (vertex.Value.distance == INFINITY)
-                    vertex.Value.distance = -1;
-            }
-        }
-
-        // Walk around the paths to see what the shortest route to a given target is
-        public double Travel(string name, string target, double counter)
-        {
-            if (name == target)
-                return counter;
-
-            var adj = GetVertex(name).GetAdjacents();
-            double minDistance = INFINITY;
-
-            foreach (var adjacent in adj)
-            {
-                if (adjacent.dest.name != name)
-                {
-                    double distance = Travel(adjacent.dest.name, target, counter + 1);
-                    if (distance < minDistance)
-                    {
-                        minDistance = distance;
-                    } 
-                }
-            }
-
-            return minDistance;
-        }
 
         public bool HasCycle(string name)
         {
@@ -201,6 +162,72 @@ namespace AD
 
             return returnstring;
         }
+        
+        // VERY SCARY - TEST METHODS FROM 2013 PRACTICE EXAM
+        
+        // // Sets the distance of each Vertex to the distance they have from the Node you're trying to find
+        // public void FindDistanceTo(string name)
+        // {
+        //     foreach (var vertex in vertexMap)
+        //     {
+        //         if (vertex.Key == name)
+        //         {
+        //             vertex.Value.distance = 0;
+        //             continue;
+        //         }
+        //         vertex.Value.distance = Travel(vertex.Key, name, 0);
+        //
+        //         if (vertex.Value.distance == INFINITY)
+        //             vertex.Value.distance = -1;
+        //     }
+        // }
+        //
+        // // Walk around the paths to see what the shortest route to a given target is
+        // public double Travel(string name, string target, double counter)
+        // {
+        //     if (name == target)
+        //         return counter;
+        //
+        //     var adj = GetVertex(name).GetAdjacents();
+        //     double minDistance = INFINITY;
+        //
+        //     foreach (var adjacent in adj)
+        //     {
+        //         if (adjacent.dest.name != name)
+        //         {
+        //             double distance = Travel(adjacent.dest.name, target, counter + 1);
+        //             if (distance < minDistance)
+        //             {
+        //                 minDistance = distance;
+        //             } 
+        //         }
+        //     }
+        //
+        //     return minDistance;
+        // }
+        //
+        // // Sadly doesn't work because of the 'boundary conditon' in travel.
+        // public bool HasCycle(string name)
+        // {
+        //     if (Travel(name, name, 0) != INFINITY)
+        //     {
+        //         return true;
+        //     }
+        //
+        //     return false;
+        // }
+        //
+        //
+        // public string ShowDistance()
+        // {
+        //     var returnstring = "";
+        //     foreach (var vertex in vertexMap)
+        //     {
+        //         returnstring += ($"{vertex.Key}({vertex.Value.distance}) ");
+        //     }
+        //
+        //     return returnstring;
+        // }
 
         /// <summary>
         ///    Performs the Dijkstra algorithm for weighted graphs.

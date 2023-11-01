@@ -102,11 +102,18 @@ namespace AD
         }
 
 
-        public string ToPrefixString()
+        public string ToPrefixString(BinaryNode<T> node)
         {
-            if (IsEmpty())
+            if (node == null)
                 return ("NIL");
-            return "";
+            string retString = "[ ";
+            retString += node.GetData();
+            retString += " ";
+            retString += ToPrefixString(node.GetLeft());
+            retString += " ";
+            retString += ToPrefixString(node.GetRight());
+            retString += " ]";
+            return retString;
         }
 
         public string ToInfixString(BinaryNode<T> node)
@@ -114,6 +121,27 @@ namespace AD
             if (node == null)
                 return ("NIL");
             return "[ " + ToInfixString(node.GetLeft()) + " " + node.GetData() + " " + ToInfixString(node.GetRight() )+ " ]";
+        }
+        
+        public string ToPostfixString(BinaryNode<T> node)
+        {
+            if (node == null)
+                return ("NIL");
+            string retString = "[ ";
+            retString += ToPostfixString(node.GetLeft());
+            retString += " ";
+            retString += ToPostfixString(node.GetRight());
+            retString += " ";
+            retString += node.GetData();
+            retString += " ]";
+            return retString;
+        }
+        
+        public string ToPrefixString()
+        {
+            if (IsEmpty())
+                return "NIL";
+            return ToPrefixString(GetRoot());
         }
         
         public string ToInfixString()
@@ -126,8 +154,8 @@ namespace AD
         public string ToPostfixString()
         {
             if (IsEmpty())
-                return ("NIL");
-            return "";
+                return "NIL";
+            return ToPostfixString(GetRoot());
         }
 
 
