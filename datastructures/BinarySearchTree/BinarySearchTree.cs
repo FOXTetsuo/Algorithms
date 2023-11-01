@@ -115,6 +115,42 @@ namespace AD
 
             return node.GetData();
         }
+
+        public T FindSecondToMinSimple()
+        {
+            BinaryNode<T> current = GetRoot();
+            BinaryNode<T> prev = null;
+
+            // Traverse the tree to find the second smallest element
+            while (current != null && current.GetLeft() != null)
+            {
+                prev = current;
+                current = current.GetLeft();
+            }
+
+            // If there is no left subtree, the smallest element is the root, return its right child
+            if (current == null)
+            {
+                if (GetRoot().GetRight() != null)
+                {
+                    return GetRoot().GetRight().GetData();
+                }
+                else
+                {
+                    // Handle the case where there's no right child, you may want to define the behavior
+                    return default(T); // Replace with an appropriate default value or throw an exception.
+                }
+            }
+
+            // If the smallest element has a right subtree, find the minimum in that subtree
+            if (current.GetRight() != null)
+            {
+                return FindMinNode(current.GetRight()).GetData();
+            }
+
+            // If the smallest element has no right subtree, return its parent (prev) data
+            return prev.GetData();
+        }
         
         // Just keep going right
         public T FindMax(BinaryNode<T> node)

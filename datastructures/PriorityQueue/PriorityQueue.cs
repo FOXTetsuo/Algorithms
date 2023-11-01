@@ -60,7 +60,7 @@ namespace AD
             array[1] = array[Size()];
             PercolateDown();
             array[Size()] = default(T);
-            size += -1;
+            size--;
 
             return copyOfFirstIndex;
         }

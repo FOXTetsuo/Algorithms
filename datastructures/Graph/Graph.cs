@@ -113,6 +113,7 @@ namespace AD
             }
         }
 
+        // WARNING: THIS IS INEFFICIENT AS SHIT. IT'S A DEPTH FIRST SEARCH.
         // Sets the distance of each Vertex to the distance they have from the Node you're trying to find
         public void FindDistanceTo(string name)
         {
@@ -154,14 +155,38 @@ namespace AD
             return minDistance;
         }
 
-        // Sadly doesn't work because of the 'boundary conditon' in travel.
         public bool HasCycle(string name)
         {
-            if (Travel(name, name, 0) != INFINITY)
+            // Create a set to keep track of visited vertices
+            var visited = new HashSet<string>();
+        
+            // Call a helper function to perform the DFS
+            return HasCycleHelper(name, null, visited);
+        }
+        
+        private bool HasCycleHelper(string current, string parent, HashSet<string> visited)
+        {
+            visited.Add(current);
+        
+            var adj = GetVertex(current).GetAdjacents();
+        
+            foreach (var adjacent in adj)
             {
-                return true;
+                string next = adjacent.dest.name;
+        
+                // If the adjacent vertex is the parent, skip it (it's not a cycle)
+                if (next == parent)
+                    continue;
+        
+                // If the adjacent vertex has already been visited, it's a cycle
+                if (visited.Contains(next))
+                    return true;
+        
+                // Recursively check for a cycle in the adjacent vertex
+                if (HasCycleHelper(next, current, visited))
+                    return true;
             }
-
+        
             return false;
         }
 
